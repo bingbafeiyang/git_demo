@@ -1,0 +1,13 @@
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+  application:
+    name: hogwarts-mini
+
+server:
+  port: 8082
+
+
+Hogwarts:
+  key1: hogwarts234

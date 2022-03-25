@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<!-- -->
+
+<generatorConfiguration>
+    <properties resource="generator/config.properties"/>
+
+    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+
+        <plugin type="${mapper.plugin}">
+            <property name="mappers" value="${mapper.Mapper}"/>
+        </plugin>
+
+        <jdbcConnection driverClass="${jdbc.driverClass}"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/hogwarts_mini?characterEncoding=utf8&amp;serverTimezone=Asia/Shanghai"
+                        userId="${jdbc.user}"
+                        password="${jdbc.password}">
+        </jdbcConnection>
+
+        <javaModelGenerator targetPackage="${targetModelPackage}" targetProject="${targetJavaProject}">
+            <property name="rootClass" value="com.hogwatsmini.demo.entity.BaseEntityNew"/>
+        </javaModelGenerator>
+
+        <sqlMapGenerator targetPackage="${targetXMLPackage}" targetProject="${targetResourcesProject}"/>
+
+        <javaClientGenerator targetPackage="${targetMapperPackage}" targetProject="${targetJavaProject}"
+                             type="XMLMAPPER"/>
+
+        <!-- 生成用户的相关类
+        <table schema="hogwarts_mini" tableName="hogwarts_test_user" domainObjectName="HogwartsTestUser" enableCountByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" enableUpdateByExample="false" >
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+
+         生成用例的相关类
+        <table schema="hogwarts_mini" tableName="hogwarts_test_case" domainObjectName="HogwartsTestCase" enableCountByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" enableUpdateByExample="false" >
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+
+          生成测试任务和测试用例的相关联类
+        <table schema="hogwarts_mini" tableName="hogwarts_test_task_case_rel" domainObjectName="HogwartsTestTaskCaseRel" enableCountByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" enableUpdateByExample="false" >
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>  -->
+
+        <!-- 生成测试任务的相关类 -->
+        <table schema="hogwarts_mini" tableName="hogwarts_test_task" domainObjectName="HogwartsTestTask" enableCountByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" enableUpdateByExample="false" >
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+
+
+
+
+
+    </context>
+
+</generatorConfiguration>

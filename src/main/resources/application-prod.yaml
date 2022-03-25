@@ -1,0 +1,37 @@
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+  application:
+    name: hogwarts-mini
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/hogwarts_mini?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.hogwatsmini.demo.entity
+  configuration:
+    mapUnderscoreToCamelCase: true
+
+logging:
+  level:
+    com.hogwatsmini.demo.dao: debug #打印sql
+
+server:
+  port: 8083
+
+
+Hogwarts:
+  key1: hogwarts234
+
+jenkins:
+  url: http://stuq.ceshiren.com:8080/
+  username: hogwarts
+  password: hogwarts123
+  casetype: 2
+  casesuffix: yml
+  testcommand: hrun
+  callbackurl: http://localhost:8091/
